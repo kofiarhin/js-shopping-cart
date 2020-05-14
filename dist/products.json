@@ -1,0 +1,252 @@
+{
+    "men": [
+        {
+            "id": 1,
+            "title": "Jack & Jones Originals revere collar toucan print short",
+            "price": 30,
+            "image_url": "./images/men/item-1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "River Island cord shirt in rust",
+            "price": 40,
+            "image_url": "./images/men/item-2.jpg"
+        },
+        {
+            "id": 3,
+            "title": "ASOS DESIGN relaxed fit black viscose shirt with low revere collar in blackt",
+            "price": 40,
+            "image_url": "./images/men/item-3.jpg"
+        },
+        {
+            "id": 4,
+            "title": "ASOS DESIGN relaxed fit viscose shirt with deep revere collar in pink",
+            "price": 40,
+            "image_url": "./images/men/item-4.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Jack & Jones Premium revere collar short sleeve vertical stripe shirt in navy",
+            "price": 30,
+            "image_url": "./images/men/item-5.jpg"
+        },
+        {
+            "id": 6,
+            "title": "ASOS DESIGN stretch skinny shirt with grandad collar in black",
+            "price": 18,
+            "image_url": "./images/men/item-6.jpg"
+        },
+        {
+            "id": 7,
+            "title": "ASOS DESIGN co-ord linen shirt with revere collar in pink",
+            "price": 25,
+            "image_url": "./images/men/item-7.jpg"
+        },
+        {
+            "id": 8,
+            "title": "New Look short sleeve bandana print shirt in black",
+            "price": 17.99,
+            "image_url": "./images/men/item-8.jpg"
+        },
+        {
+            "id": 9,
+            "title": "ASOS DESIGN oversized organic denim shirt in stone",
+            "price": 25,
+            "image_url": "./images/men/item-9.jpg"
+        },
+        {
+            "id": 10,
+            "title": "ASOS DESIGN Tall skinny fit shirt in mustard with short sleeves",
+            "price": 18,
+            "image_url": "./images/men/item-10.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Fred Perry taped placket short sleeve shirt in black",
+            "price": 75,
+            "image_url": "./images/men/item-11.jpg"
+        },
+        {
+            "id": 12,
+            "title": "Jack & Jones Premium slim fit revere collar floral shirt in cream",
+            "price": 30,
+            "image_url": "./images/men/item-12.jpg"
+        },
+        {
+            "id": 13,
+            "title": "adidas Originals premium Samstag shirt in navy",
+            "price": 44.95,
+            "image_url": "./images/men/item-13.jpg"
+        },
+        {
+            "id": 14,
+            "title": "ASOS DESIGN slim fit oxford shirt in pink with grandad collar",
+            "price": 18,
+            "image_url": "./images/men/item-14.jpg"
+        },
+        {
+            "id": 15,
+            "title": "COLLUSION stripe shirt with back graphics",
+            "price": 22,
+            "image_url": "./images/men/item-15.jpg"
+        },
+        {
+            "id": 16,
+            "title": "Only & Sons short sleeve revere collar palm print shirt in blue",
+            "price": 25,
+            "image_url": "./images/men/item-16.jpg"
+        },
+        {
+            "id": 17,
+            "title": "Levi's Cubano paisley print shirt revere collar short sleeve in black",
+            "price": 40,
+            "image_url": "./images/men/item-17.jpg"
+        },
+        {
+            "id": 18,
+            "title": "ASOS DESIGN stretch skinny fit shirt with grandad collar in navy",
+            "price": 20,
+            "image_url": "./images/men/item-18.jpg"
+        },
+        {
+            "id": 19,
+            "title": "ASOS DESIGN slim fit oxford shirt in mustard",
+            "price": 20,
+            "image_url": "./images/men/item-19.jpg"
+        },
+        {
+            "id": 20,
+            "title": "COLLUSION nylon boxy shirt in black",
+            "price": 20,
+            "image_url": "./images/men/item-20.jpg"
+        }
+    ],
+    "women": [
+        {
+            "id": 1,
+            "title": "COLLUSION denim dress in pink overdye with belt",
+            "price": 40,
+            "image_url": "./images/women/item-1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "ASOS DESIGN ruched bandeau mini dress",
+            "price": 40,
+            "image_url": "./images/women/item-2.jpg"
+        },
+        {
+            "id": 3,
+            "title": "ASOS DESIGN Curve embroidered pleated cami wrap midi dress in navy",
+            "price": 40,
+            "image_url": "./images/women/item-3.jpg"
+        },
+        {
+            "id": 4,
+            "title": "ASOS DESIGN split sleeve mini dress with obi belt in terracotta",
+            "price": 33,
+            "image_url": "./images/women/item-4.jpg"
+        },
+        {
+            "id": 5,
+            "title": "ASOS DESIGN Petite Exclusive strappy tiered maxi dress in peach",
+            "price": 25,
+            "image_url": "./images/women/item-5.jpg"
+        },
+        {
+            "id": 6,
+            "title": "ASOS DESIGN midi dress with linear yoke embellishment",
+            "price": 55,
+            "image_url": "./images/women/item-6.jpg"
+        },
+        {
+            "id": 7,
+            "title": "ASOS DESIGN off shoulder mini sundress with pep hem in white",
+            "price": 15,
+            "image_url": "./images/women/item-7.jpg"
+        },
+        {
+            "id": 8,
+            "title": "ASOS DESIGN tiered mini sundress with frill lace inserts in ditsy floral print",
+            "price": 30,
+            "image_url": "./images/women/item-8.jpg"
+        },
+        {
+            "id": 9,
+            "title": "ASOS DESIGN cami wrap midi dress with tie waist",
+            "price": 35,
+            "image_url": "./images/women/item-9.jpg"
+        },
+        {
+            "id": 10,
+            "title": "ASOS DESIGN drop waist shirred floral midaxi dress",
+            "price": 48,
+            "image_url": "./images/women/item-10.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Noisy May swing dress with tie cami sleeves in green spot print",
+            "price": 18,
+            "image_url": "./images/women/item-11.jpg"
+        },
+        {
+            "id": 12,
+            "title": "New Girl Order tie neck maxi smock dress in mix print crinkle fabric",
+            "price": 42,
+            "image_url": "./images/women/item-12.jpg"
+        },
+        {
+            "id": 13,
+            "title": "C/Meo Collective Over Again square neck midi dress in fuchsia",
+            "price": 165,
+            "image_url": "./images/women/item-13.jpg"
+        },
+        {
+            "id": 14,
+            "title": "Closet London ribbed pencil dress with tie belt in navy",
+            "price": 60,
+            "image_url": "./images/women/item-14.jpg"
+        },
+        {
+            "id": 15,
+            "title": "ASOS DESIGN high neck pleated chevron dobby midi dress with puff sleeve in tea rose",
+            "price": 45,
+            "image_url": "./images/women/item-15.jpg"
+        },
+        {
+            "id": 16,
+            "title": "C/Meo Collective tie dye midi slip dress in vermillion",
+            "price": 160,
+            "image_url": "./images/women/item-16.jpg"
+        },
+        {
+            "id": 17,
+            "title": "ASOS DESIGN maxi dress with batwing sleeve and wrap waist in satin",
+            "price": 50,
+            "image_url": "./images/women/item-17.jpg"
+        },
+        {
+            "id": 18,
+            "title": "ASOS DESIGN button through midi tea dress in soft floral print",
+            "price": 40,
+            "image_url": "./images/women/item-18.jpg"
+        },
+        {
+            "id": 19,
+            "title": "adidas Originals mini logo t-shirt dress in black",
+            "price": 28,
+            "image_url": "./images/women/item-19.jpg"
+        },
+        {
+            "id": 19,
+            "title": "adidas Originals mini logo t-shirt dress in black",
+            "price": 28,
+            "image_url": "./images/women/item-19.jpg"
+        },
+        {
+            "id": 20,
+            "title": "Topshop balloon sleeve midi dress in pale blue",
+            "price": 18,
+            "image_url": "./images/women/item-20.jpg"
+        }
+    ]
+}
