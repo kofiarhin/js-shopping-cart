@@ -90,3 +90,12 @@ export function renderCart(data) {
         clearCart()
     }
 }
+
+
+export function renderCartTotal(total) {
+
+    const span = getElement(".main-header .cart-total")
+
+    span.textContent = total;
+
+}

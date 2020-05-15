@@ -131,6 +131,8 @@ function removeItemController(event) {
             state.cartModel.removeItem(id, category);
             cartView.renderCart(state.cartModel.cartData);
 
+            renderCartLength()
+
         }
     }
 
@@ -148,12 +150,27 @@ function cartController() {
     cartWrapper.addEventListener("click", removeItemController)
 }
 
+
+
+// render cartlength
+
+function renderCartLength() {
+    const cartLength = state.cartModel.getCartLength();
+    IndexView.renderCartLength(cartLength)
+
+}
+
+
 //  on load of window
 window.addEventListener("load", async () => {
 
     // localStorage.clear()
     // load cart
     state.cartModel = new CartModel();
+
+    renderCartLength()
+
+
 
     // load products
     await controlLoad();

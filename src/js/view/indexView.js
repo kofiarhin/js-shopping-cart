@@ -78,3 +78,16 @@ export function renderBestSellers(data, query) {
     const newData = shuffle(data).slice(0, 5);
     renderItems(newData, "#best-sellers .container .items-wrapper", query)
 }
+
+export function renderCartLength(length) {
+
+    const text = getElement(".main-header .cart-length");
+
+    if (length) {
+        text.textContent = length
+    }
+
+    if (!length) {
+        text.textContent = ""
+    }
+}

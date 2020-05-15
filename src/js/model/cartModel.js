@@ -60,14 +60,16 @@ export default class CartModel {
         if (index !== -1) {
 
             const cartData = this.cartData;
-
             cartData.splice(index, 1);
-
             this.saveCart(cartData)
-
 
         }
 
+    }
 
+    getCartLength() {
+
+        const cartData = this.cartData;
+        return cartData.length;
     }
 }
