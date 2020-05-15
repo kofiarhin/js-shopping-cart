@@ -116,10 +116,36 @@ function addItemController() {
 }
 
 
+// remove item controller
+function removeItemController(event) {
+
+    if (event.target.className === "remove") {
+
+        const element = event.target.parentNode.parentNode;
+
+        const id = parseInt(element.dataset.id);
+        const category = element.dataset.category;
+
+        if (id) {
+
+            state.cartModel.removeItem(id, category);
+            cartView.renderCart(state.cartModel.cartData);
+
+        }
+    }
+
+}
+
 // cart controller
 function cartController() {
 
+    const cartWrapper = getElement("#cart .container .cart-wrapper");
+
+
     cartView.renderCart(state.cartModel.cartData);
+
+    // add event lister to when user clickes on the remove button
+    cartWrapper.addEventListener("click", removeItemController)
 }
 
 //  on load of window
@@ -159,7 +185,6 @@ window.addEventListener("load", async () => {
     }
 
     else if (state.path === "cart.html") {
-
         cartController()
     }
 

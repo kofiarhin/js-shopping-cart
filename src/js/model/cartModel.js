@@ -33,8 +33,6 @@ export default class CartModel {
         localStorage.setItem("cart", JSON.stringify(data));
         this.cartData = this.getCart();
 
-        console.log(this.cartData);
-
     }
 
     getCart() {
@@ -47,5 +45,29 @@ export default class CartModel {
         }
 
         return cartData;
+    }
+
+    removeItem(id, cartegory) {
+
+        const data = this.cartData;
+
+        // find index of item
+        const index = data.findIndex(item => {
+
+            return item.id === id && item.category === cartegory;
+        });
+
+        if (index !== -1) {
+
+            const cartData = this.cartData;
+
+            cartData.splice(index, 1);
+
+            this.saveCart(cartData)
+
+
+        }
+
+
     }
 }

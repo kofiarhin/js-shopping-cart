@@ -14,7 +14,7 @@ function renderItems(data) {
 
                     <div class="content">
                         <h1 class="title">${item.title}</h1>
-                        <p class="price">$${item.price}</p>
+                        <p class="price">$${item.price.toFixed(2)}</p>
                         <button class="remove">Remove</button>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ function renderTotal(data) {
         sum += parseInt(item.price);
     });
 
-    textWrapper.innerHTML = `<h1> Your Total: $${sum}</h1>`
+    textWrapper.innerHTML = `<h1> Your Total: $${sum.toFixed(2)}</h1>`
 
 }
 
@@ -66,13 +66,27 @@ function renderTitle(data) {
 
 }
 
+
+function clearCart() {
+
+    const container = getElement("#cart .container .cart-wrapper");
+    const title = getElement('#cart .main-title');
+    container.innerHTML = "";
+    title.textContent = "Your Cart is empty"
+
+
+}
+
 // render cart
 export function renderCart(data) {
 
     renderTitle(data)
+
     if (data && data.length > 0) {
         renderItems(data)
         renderTotal(data)
         renderButtons()
+    } else {
+        clearCart()
     }
 }
