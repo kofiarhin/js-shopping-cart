@@ -155,8 +155,8 @@ function cartController() {
 // render cartlength
 
 function renderCartLength() {
-    const cartLength = state.cartModel.getCartLength();
-    IndexView.renderCartLength(cartLength)
+    // const cartLength = state.cartModel.getCartLength();
+    // IndexView.renderCartLength(cartLength);
 
 }
 
