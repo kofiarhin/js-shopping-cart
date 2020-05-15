@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
+  },
+  "engines": {
+    "node": "12.11.1"
   },
   "author": "",
   "license": "ISC",
