@@ -1,5 +1,10 @@
 #banner
     position: relative
+    margin-bottom: 2rem
+    .banner-content
+        height: 100vh
+        background-size: cover
+        background-position: top right
     img
         width: 100%
     .banner-cta
@@ -7,7 +12,24 @@
         background: black
         color: white
         padding: 0.8rem 3rem
-        font-size: 1.8rem
+        font-size: 1.5rem
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+@media(max-width: 960px)
+    #banner
+        .banner-cta
+            font-size: 1.2rem
+// mobile
+@media(max-width: 500px)
+    #banner
+        .banner-cta
+            font-size: 1rem
+            padding: 0.8rem 3rem
+
+
+@media(max-width: 450px)
+    #banner
+        .banner-cta
+            width: 200px
+            font-size: 0.8rem

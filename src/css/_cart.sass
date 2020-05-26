@@ -1,30 +1,37 @@
 #cart
     padding-bottom: 10rem
+    height: 80vh
+    margin-bottom: 8rem
     .cart-wrapper
-        width: 740px
+        width: 500px
         max-width: 90%
         margin: 0 auto
     .cart-item
         margin-bottom: 2rem
-        display: flex
+        display: grid
+        grid-template-columns: 1fr 2fr
     .cover
         margin-right: 20px
-        width: 200px
-        height: 200px
         background-size: cover
         background-position: top center
     .content
         flex: 1
         .title
-            font-size: 1.4rem
+            font-size: 1rem
             margin-bottom: 0.5rem
         .price
             font-size: 1.8rem
             margin-bottom: 1rem
+        .remove
+            color: red
+            font-weight: 700
 .cart-wrapper
     .text-wrapper
         font-size: 1.4rem
         margin-bottom: 1rem
+        .total
+            font-size: 1.5rem
+        
     .button-wrapper
         button
             display: block
@@ -34,3 +41,12 @@
             padding: 1rem 0rem
             font-size: 1.2rem
             cursor: pointer
+
+
+@media(max-width: 500px)
+    #cart .cart-item
+        display: block
+        .cover
+            width: 100%
+            height: 300px
+            margin-bottom: 1rem

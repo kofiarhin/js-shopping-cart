@@ -1,0 +1,35 @@
+// main header
+.main-header
+    background: black
+    color: white
+    padding: 0.8rem 0rem
+    margin-bottom: 1.5rem
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+    a .logo
+        font-size: 1.4rem
+        color: white
+    input
+        padding: 0.8rem
+        width: 60%
+        border-radius: 50px
+        text-indent: 20px
+        font-size: 1.2rem
+    
+    nav a
+        color: white
+        margin-left: 1rem
+        font-size: 1.2rem
+    .menu
+        font-size: 1.8rem
+        cursor: pointer
+        display: none
+
+@media(max-width: 450px)
+    .main-header
+        nav
+            display: none
+        .menu
+            display: block

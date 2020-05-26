@@ -36,7 +36,7 @@ function renderTotal(data) {
         sum += parseInt(item.price);
     });
 
-    textWrapper.innerHTML = `<h1> Your Total: $${sum.toFixed(2)}</h1>`
+    textWrapper.innerHTML = `<h1 class="total"> Your Total: $${sum.toFixed(2)}</h1>`
 
 }
 
@@ -97,5 +97,25 @@ export function renderCartTotal(total) {
     const span = getElement(".main-header .cart-total")
 
     span.textContent = total;
+
+}
+
+export function renderCartLength(length) {
+
+    if (length) {
+
+        // get element
+        const element = getElement(".cart-length");
+
+        element.textContent = length;
+    }
+}
+
+
+export function clearCartLength() {
+
+    const element = getElement(".cart-length")
+
+    element.textContent = "";
 
 }

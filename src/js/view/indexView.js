@@ -13,12 +13,14 @@ const renderItems = (data, container, query) => {
 
     const element = getElement(container);
 
+
     let output = "";
     data.forEach(item => {
 
         let markup = `
                  <a href="viewItem.html?category=${query}&id=${item.id}" class="item-unit">
                     <div class="cover" style="background-image: url(${item.image_url})"></div>
+                    <p class="item-title"> ${item.title} </p> 
                 </a>            
         `;
 
@@ -45,11 +47,9 @@ export function renderBanner(query) {
     const banner = getElement("#banner .container")
 
     let markup = `
-     <div class="banner-content">
-             <img src="./images/${query}/banner.jpg" />
+     <div class="banner-content" style="background-image: url(./images/${query}/banner.jpg)">
              <a href="shop.html?query=${query}" class="banner-cta"> Start Shopping </a> 
         </div>
-     
      `;
     banner.innerHTML = markup;
 
@@ -90,4 +90,9 @@ export function renderCartLength(length) {
     if (!length) {
         text.textContent = ""
     }
+}
+
+export function renderTrendingBrand() {
+
+
 }

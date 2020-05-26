@@ -26,7 +26,6 @@ function controlShop() {
 
     shopView.renderItems(state.products.result[state.query], state.query)
 
-
 }
 
 
@@ -37,17 +36,21 @@ function controlIndex() {
     const query = state.query;
     const products = state.products;
 
-    // load banner
+    // // load banner
     IndexView.renderBanner(state.query);
 
-    // render latest
+    // // render latest
     IndexView.renderLastest(data[query], state.query)
 
-    //render trending
+    // //render trending
     IndexView.renderTrending(products.result[query], state.query)
 
-    // render best sellers
+    // // render best sellers
     IndexView.renderBestSellers(data[query], state.query)
+
+
+    // render trending brands
+    IndexView.renderTrendingBrand()
 
 }
 
@@ -143,9 +146,7 @@ function cartController() {
 
     const cartWrapper = getElement("#cart .container .cart-wrapper");
 
-
     cartView.renderCart(state.cartModel.cartData);
-
     // add event lister to when user clickes on the remove button
     cartWrapper.addEventListener("click", removeItemController)
 }
@@ -158,55 +159,25 @@ function renderCartLength() {
     // const cartLength = state.cartModel.getCartLength();
     // IndexView.renderCartLength(cartLength);
 
+
+    // check if there are items in cart
+    if (state.cartModel.cartData && state.cartModel.cartData.length > 0) {
+
+        const cartLength = state.cartModel.cartData.length;
+
+        // render cart length on ui
+        cartView.renderCartLength(cartLength)
+
+    }
+
+    // lazy approach but hey it works
+    else {
+
+        cartView.clearCartLength()
+
+    }
+
 }
-
-
-//  on load of window
-window.addEventListener("load", async () => {
-
-    // localStorage.clear()
-    // load cart
-    state.cartModel = new CartModel();
-
-    renderCartLength()
-
-
-
-    // load products
-    await controlLoad();
-
-    // set default query to men
-    state.query = "men";
-
-    // get the page
-    state.path = window.location.pathname.replace("/", "");
-
-    // if on index page load index controller
-    if (!state.path || state.path === "index.html") {
-        controlIndex()
-
-    }
-
-    // if on shop page
-    else if (state.path === "shop.html") {
-
-        // load shop controller
-        controlShop()
-
-    }
-
-    //  view item page
-    else if (state.path === "viewItem.html") {
-
-        viewItemController()
-    }
-
-    else if (state.path === "cart.html") {
-        cartController()
-    }
-
-});
-
 
 // control hashChange
 function controlHashchange() {
@@ -238,8 +209,56 @@ function controlHashchange() {
         shopView.renderItems(state.products.result[state.query], state.query)
     }
 
-
 }
+
+
+//  on load of window
+window.addEventListener("load", async () => {
+
+
+    console.log("render side nav")
+    // localStorage.clear()
+    // load cart
+    state.cartModel = new CartModel();
+
+    renderCartLength()
+
+    // load products
+    await controlLoad();
+
+    // set default query to men
+    state.query = "men";
+
+    // get the page
+    state.path = window.location.pathname.replace("/", "");
+
+    // if on index page load index controller
+    if (!state.path || state.path === "index.html") {
+        controlIndex()
+    }
+
+    // if on shop page
+    else if (state.path === "shop.html") {
+
+        // load shop controller
+        controlShop()
+
+    }
+
+    //  view item page
+    else if (state.path === "viewItem.html") {
+
+        viewItemController()
+    }
+
+    else if (state.path === "cart.html") {
+        cartController()
+    }
+
+});
+
+
+
 
 
 // when thee is a hashchange
