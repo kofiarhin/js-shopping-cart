@@ -1,5 +1,5 @@
 #side-nav
-    position: absolute
+    position: fixed
     top: 0 
     left: 0
     bottom: 0
@@ -10,8 +10,12 @@
     padding: 4rem 2rem
     background: black
     transition: all ease-in-out 300ms
+    transform: translateX(-400px)
+    &.active
+        transform: translateX(0px)
     li
         margin-bottom: 0.8rem
     li a
         color: white
         font-size: 1.4rem
+        

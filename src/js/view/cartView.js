@@ -104,10 +104,14 @@ export function renderCartLength(length) {
 
     if (length) {
 
-        // get element
-        const element = getElement(".cart-length");
 
-        element.textContent = length;
+        const elements = document.querySelectorAll(".cart-length")
+
+        elements.forEach(item => {
+
+            item.textContent = length;
+        });
+
     }
 }
 

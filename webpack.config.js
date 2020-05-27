@@ -30,6 +30,11 @@ module.exports = {
         new htmlWebpackPlugin({
             filename: "viewItem.html",
             template: './src/viewItem.html'
+        }),
+
+        new htmlWebpackPlugin({
+            filename: "search.html",
+            template: "./src/search.html"
         })
     ],
 

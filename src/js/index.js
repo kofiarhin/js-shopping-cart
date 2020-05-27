@@ -5,6 +5,7 @@ import * as IndexView from "./view/indexView";
 import * as shopView from "./view/shopView";
 import * as itemView from "./view/itemView";
 import * as cartView from "./view/cartView";
+import * as SearchView from "./view/searchView";
 
 import { getElement } from "./view/helper";
 
@@ -13,7 +14,8 @@ import { getElement } from "./view/helper";
 const state = {
     query: "women",
     products: "",
-    path: "index.html"
+    path: "index.html",
+    search: ""
 }
 
 
@@ -47,7 +49,6 @@ function controlIndex() {
 
     // // render best sellers
     IndexView.renderBestSellers(data[query], state.query)
-
 
     // render trending brands
     IndexView.renderTrendingBrand()
@@ -86,8 +87,6 @@ function viewItemController() {
 
     itemView.renderItem(product);
 
-
-
     // when user clicks on add to cart
     const itemWrapper = getElement("#item .container .item-wrapper")
 
@@ -103,8 +102,7 @@ function viewItemController() {
 }
 
 
-
-// addd item controller
+// addd item to cart  controller
 function addItemController() {
 
     // get product from state
@@ -152,13 +150,10 @@ function cartController() {
 }
 
 
-
 // render cartlength
-
 function renderCartLength() {
     // const cartLength = state.cartModel.getCartLength();
     // IndexView.renderCartLength(cartLength);
-
 
     // check if there are items in cart
     if (state.cartModel.cartData && state.cartModel.cartData.length > 0) {
@@ -185,7 +180,6 @@ function controlHashchange() {
     const hash = window.location.hash;
     state.query = hash.replace("#", "");
 
-
     // if on the index page
     if (!state.path || state.path === "index.html") {
 
@@ -203,24 +197,82 @@ function controlHashchange() {
 
     }
 
-
     // if on the shop page
     if (state.path === "shop.html") {
         shopView.renderItems(state.products.result[state.query], state.query)
     }
 
+    if (state.path === "search.html") {
+
+        SearchController()
+    }
+
 }
+
+// toggle nav
+function toggleNav() {
+
+    const nav = getElement("#side-nav")
+
+    nav.classList.toggle("active")
+}
+
+
+
+// search controller
+function SearchController() {
+
+
+    const search = new URLSearchParams(window.location.search).get("search");
+
+    state.products.searchItems(search, state.query);
+
+    if (state.products.searchData) {
+
+        SearchView.renderItems(state.products.searchData)
+    }
+
+
+
+
+}
+
+
+
+// key press controller
+function keyPressController(event) {
+
+    if (event.keyCode === 13) {
+
+
+        const search = getElement('.search').value;
+
+        if (search && search.length > 0) {
+            window.location.href = `search.html?search=${search}`;
+
+
+        }
+
+    }
+
+}
+
 
 
 //  on load of window
 window.addEventListener("load", async () => {
 
+    // get menu icon
+    const menu = getElement(".menu");
 
-    console.log("render side nav")
+    // add event listener
+    menu.addEventListener("click", toggleNav)
+
     // localStorage.clear()
     // load cart
     state.cartModel = new CartModel();
 
+    // render cart length
     renderCartLength()
 
     // load products
@@ -255,14 +307,24 @@ window.addEventListener("load", async () => {
         cartController()
     }
 
-});
 
+    else if (state.path === "search.html") {
+
+        SearchController()
+
+    }
+
+
+
+});
 
 
 
 
 // when thee is a hashchange
 window.addEventListener("hashchange", controlHashchange)
+
+window.addEventListener("keypress", keyPressController)
 
 
 

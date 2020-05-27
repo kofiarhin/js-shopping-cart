@@ -1,6 +1,16 @@
 export default class ProductsModel {
 
+    searchItems(search, query) {
 
+        const data = this.result[query];
+
+        if (data && data.length > 0) {
+
+            const searchData = data.filter(item => item.title.toLowerCase().includes(search.toLowerCase()));
+            this.searchData = searchData;
+        }
+
+    }
 
     async  getProducts() {
 

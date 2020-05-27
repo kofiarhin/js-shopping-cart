@@ -14,3 +14,23 @@ export function shuffle(a) {
     }
     return a;
 }
+
+
+export function renderElements(element, data) {
+
+    let output = "";
+    data.forEach(item => {
+
+        let markup = `
+                <div class="item-unit"> 
+                <div class="cover" style="background-image: url(${item.image_url})"> </div>
+                        <h2 class="item-title"> ${item.title}</h2>
+                        <p class="item-price"> ${item.price} </p>           
+                </div>
+        `;
+
+        output += markup;
+    });
+
+    element.innerHTML = output
+}
