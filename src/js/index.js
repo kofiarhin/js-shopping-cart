@@ -242,16 +242,26 @@ function SearchController() {
 // key press controller
 function keyPressController(event) {
 
+
+
+
     if (event.keyCode === 13) {
 
 
+        const sideSearch = getElement(".side-search").value;
         const search = getElement('.search').value;
 
         if (search && search.length > 0) {
             window.location.href = `search.html?search=${search}`;
 
-
         }
+
+        else if (sideSearch && sideSearch.length > 0) {
+
+            window.location.href = `search.html?search=${sideSearch}`
+        }
+
+
 
     }
 
