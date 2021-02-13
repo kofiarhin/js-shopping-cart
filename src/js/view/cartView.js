@@ -72,7 +72,7 @@ function clearCart() {
     const container = getElement("#cart .container .cart-wrapper");
     const title = getElement('#cart .main-title');
     container.innerHTML = "";
-    title.textContent = "Your Cart is empty"
+    title.textContent = "Your Cart is empty";
 
 
 }
@@ -118,8 +118,19 @@ export function renderCartLength(length) {
 
 export function clearCartLength() {
 
-    const element = getElement(".cart-length")
+    const elements = document.querySelectorAll(".cart-length");
 
-    element.textContent = "";
+    elements.forEach(item => {
 
+        item.textContent = "";
+
+    })
+
+
+}
+
+export function clearCartView() {
+
+    clearCart();
+    clearCartLength()
 }

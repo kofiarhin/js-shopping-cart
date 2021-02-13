@@ -72,4 +72,11 @@ export default class CartModel {
         const cartData = this.cartData;
         return cartData.length;
     }
+
+    clearCart() {
+
+        localStorage.clear("cart");
+        this.cartData = this.getCart();
+
+    }
 }

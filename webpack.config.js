@@ -35,6 +35,12 @@ module.exports = {
         new htmlWebpackPlugin({
             filename: "search.html",
             template: "./src/search.html"
+        }),
+
+
+        new htmlWebpackPlugin({
+            filename: "success.html",
+            template: "./src/success.html"
         })
     ],
 

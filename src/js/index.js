@@ -139,14 +139,34 @@ function removeItemController(event) {
 
 }
 
+
+// place order controller
+function placeOderController(event) {
+
+    if (event.target.className = "btn-place-order") {
+
+        //  clear cart data;
+        state.cartModel.clearCart()
+        // clear ui
+        cartView.clearCartView()
+    }
+}
+
+
 // cart controller
 function cartController() {
 
     const cartWrapper = getElement("#cart .container .cart-wrapper");
+    const ctaWrapper = getElement(".cta-wrapper");
+
 
     cartView.renderCart(state.cartModel.cartData);
+
     // add event lister to when user clickes on the remove button
     cartWrapper.addEventListener("click", removeItemController)
+
+    // add event listener when user clicks on place order
+    ctaWrapper.addEventListener("click", placeOderController)
 }
 
 
@@ -242,11 +262,8 @@ function SearchController() {
 // key press controller
 function keyPressController(event) {
 
-
-
-
+    // if enter key is pressed
     if (event.keyCode === 13) {
-
 
         const sideSearch = getElement(".side-search").value;
         const search = getElement('.search').value;
@@ -261,19 +278,24 @@ function keyPressController(event) {
             window.location.href = `search.html?search=${sideSearch}`
         }
 
-
-
     }
 
 }
 
 
+// when thee is a hashchange
+window.addEventListener("hashchange", controlHashchange)
+
+
+// when key is pressed
+window.addEventListener("keypress", keyPressController)
 
 //  on load of window
 window.addEventListener("load", async () => {
 
     // get menu icon
     const menu = getElement(".menu");
+
 
     // add event listener
     menu.addEventListener("click", toggleNav)
@@ -320,7 +342,9 @@ window.addEventListener("load", async () => {
 
     else if (state.path === "search.html") {
 
-        SearchController()
+        SearchController();
+
+
 
     }
 
@@ -329,12 +353,6 @@ window.addEventListener("load", async () => {
 });
 
 
-
-
-// when thee is a hashchange
-window.addEventListener("hashchange", controlHashchange)
-
-window.addEventListener("keypress", keyPressController)
 
 
 
